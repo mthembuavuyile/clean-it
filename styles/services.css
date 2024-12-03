@@ -1,0 +1,9 @@
+.hero {
+    min-height: 100vh;
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+                url(https://media.istockphoto.com/id/1210037479/video/colorful-plastic-trash-cans-with-a-logo-recycling-looped-animation-on-a-blue-sky-background.jpg?s=640x640&k=20&c=3-reQejegbFSF3MCAP33X27d-o2KsA4jWTQ_AKDo4dE=) center/cover;
+    display: flex;
+    align-items: center;
+    padding: 0 5%;
+    position: relative;
+}
