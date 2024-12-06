@@ -1,16 +1,36 @@
 :root {
+    /* Colors */
     --primary-color: #2ecc71;
     --secondary-color: #27ae60;
     --text-color: #2c3e50;
     --light-gray: #f8f9fa;
     --white: #ffffff;
     --dark: #1a1a1a;
+
+    /* Effects */
     --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 10px 20px rgba(0, 0, 0, 0.1);
     --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+    /* Spacing */
+    --spacing-xs: 0.5rem;
+    --spacing-sm: 1rem;
+    --spacing-md: 1.5rem;
+    --spacing-lg: 2rem;
+    --spacing-xl: 2.5rem;
+    --spacing-xxl: 4rem;
+
+    /* Layout */
     --border-radius: 8px;
     --container-width: 1400px;
+
+    /* Miscellaneous */
+    --transition-standard: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+/* Global Reset: Normalize default browser styling */
 * {
     margin: 0;
     padding: 0;
@@ -18,6 +38,18 @@
     font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
 }
 
+/* Typography: Styling for headings and text */
+h1, h2, h3, h4, h5, h6 {
+    line-height: 1.2;
+    font-weight: 700;
+    margin-bottom: var(--spacing-md);
+}
+
+h1 { font-size: clamp(2.5rem, 5vw, 4rem); }
+h2 { font-size: clamp(2rem, 4vw, 2.5rem); }
+h3 { font-size: 1.5rem; }
+
+/* General Page Styling */
 html {
     scroll-behavior: smooth;
 }
@@ -29,7 +61,7 @@ body {
     font-size: 16px;
 }
 
-/* Navigation */
+/* Navigation Bar: Fixed, responsive navigation design */
 .nav-container {
     position: fixed;
     width: 100%;
@@ -68,6 +100,7 @@ body {
     font-weight: 500;
     transition: var(--transition);
     padding: 0.5rem 0;
+    position: relative;
 }
 
 .nav-links a::after {
@@ -86,6 +119,7 @@ body {
     width: 100%;
 }
 
+/* Burger Menu: Hidden by default for large screens */
 .burger {
     display: none;
     cursor: pointer;
@@ -99,16 +133,18 @@ body {
     transition: var(--transition);
 }
 
-/* Hero Section */
+/* Hero Section: Fullscreen, visually engaging intro section */
 .hero {
     min-height: 100vh;
-    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
-                url(https://media.istockphoto.com/id/1992543692/photo/close-up-of-hand-holding-green-recycle-symbol-recycle-concept.jpg?s=612x612&w=0&k=20&c=_EmOtIFjqB3fMYGybfaveL-FSCI3s46ZFZNjyjnZCpA=) center/cover;
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+                url(https://media.istockphoto.com/id/1992543692/photo/close-up-of-hand-holding-green-recycle-symbol-recycle-concept.jpg?s=612x612&w=0&k=20&c=_EmOtIFjqB3fMYGybfaveL-FSCI3s46ZFZNjyjnZCpA=) 
+                center/cover;
     display: flex;
     align-items: center;
     padding: 0 5%;
     position: relative;
 }
+
 
 .hero-content {
     max-width: 800px;
@@ -372,6 +408,8 @@ footer p a{
 }
 
 /* Animations */
+
+/* Fade in and slide up animation */
 @keyframes fadeInUp {
     from {
         opacity: 0;
@@ -383,8 +421,68 @@ footer p a{
     }
 }
 
+/* Fade in animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Slideshow Animation */
+@keyframes fadeInSlideshow {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Base Styles */
+
+/* Image Slideshow */
+.image-slideshow {
+    text-align: center;
+    padding: 2em 0;
+}
+
+.slideshow-container {
+    position: relative;
+    max-width: 80%;
+    margin: auto;
+}
+
+.slide {
+    display: none;
+}
+
+.slide img {
+    width: 60%; /* Default width for larger screens */
+    height: auto;
+    border-radius: 8px;
+}
+
+.caption {
+    margin-top: 10px;
+    font-size: 1em;
+    color: #555;
+}
+
+/* Simple slideshow functionality */
+.slide:first-child {
+    display: block;
+}
+
 /* Media Queries */
+
+/* Tablet and Smaller Screens (max-width: 768px) */
 @media screen and (max-width: 768px) {
+    /* Navbar and Burger Menu */
     .burger {
         display: block;
         z-index: 1001;
@@ -392,16 +490,18 @@ footer p a{
 
     .nav-links {
         position: fixed;
+        top: 70px;
         right: -100%;
-        top: 0;
-        height: 100vh;
         background: var(--white);
+        width: 100%;
         flex-direction: column;
         align-items: center;
-        justify-content: center;
-        width: 100%;
+        padding: 2rem;
         transition: var(--transition);
-        z-index: 1000;
+    }
+
+    .nav-links.active {
+        right: 0;
     }
 
     .nav-active {
@@ -420,6 +520,11 @@ footer p a{
         transform: rotate(45deg) translate(-5px, -6px);
     }
 
+    /* Hero Section */
+    .hero-text h1 {
+        font-size: 2.5rem;
+    }
+
     .hero-content {
         text-align: center;
     }
@@ -429,25 +534,28 @@ footer p a{
         align-items: center;
     }
 
-    .feature-card {
+    /* Feature and Contact Cards */
+    .feature-card, .contact-detail {
         margin: 0 1rem;
     }
 
-    .contact-detail {
-        margin: 0 1rem;
+    /* Slideshow for Smaller Screens */
+    .slide img {
+        width: 98%; /* Adjust width for smaller screens */
     }
 }
 
+/* Mobile Screens (max-width: 480px) */
 @media screen and (max-width: 480px) {
     .btn {
         width: 100%;
         margin: 0.5rem 0;
     }
-    
+
     .footer-content {
         text-align: center;
     }
-    
+
     .social-icons {
         justify-content: center;
     }

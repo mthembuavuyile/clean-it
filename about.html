@@ -19,7 +19,9 @@
     <!-- CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css"/>
+    <link rel="stylesheet" href="styles/main.css">
     <link rel="stylesheet" href="styles/about.css">
+
 </head>
 <body>
     <header>
@@ -27,9 +29,9 @@
             <div class="navbar">
                 <a href="index.html" class="logo">Clean.It</a>
                 <div class="burger">
-                    <span class="line"></span>
-                    <span class="line"></span>
-                    <span class="line"></span>
+                    <div class="line1"></div>
+                    <div class="line2"></div>
+                    <div class="line3"></div>
                 </div>
                 <ul class="nav-links">
                     <li><a href="index.html">Home</a></li>
@@ -37,33 +39,42 @@
                     <li><a href="services.html">Services</a></li>
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
-            </div>
+            </div>  
         </nav>
     </header>
 
+    <section class="hero about-hero">
+        <div class="hero-content">
+            <h1 data-aos="fade-down">About us - Transforming Waste into Opportunity</h1>
+            <p data-aos="fade-up">Leading the way in sustainable waste management and recycling solutions across Africa</p>
+            <a href="contact.html" class="btn primary" data-aos="fade-up" data-aos-delay="200">Join Our Mission</a>
+        </div>
+    </section>
+
     <main>
-        <section class="about-hero">
-            <div class="hero-text" data-aos="fade-up">
-                <h1>About Us</h1>
-                <p>Leading the way to a sustainable future with cutting-edge recycling and waste management solutions.</p>
-            </div>
+        <section>
+            <h2>About Us</h2>
+            <p>Clean.It Recycling Waste Management, founded by two young entrepreneurs, is dedicated to turning waste into valuable resources. We focus on sustainability, energy solutions, and job creation. By collaborating with businesses, communities, and schools, we promote recycling and responsible waste practices to drive economic and environmental progress across Africa.</p>
+
+            <p>At Clean.It, we are innovators and environmentalists committed to making a tangible impact on waste management. Using advanced technologies and strategic partnerships, we strive to redefine recycling for communities and industries alike. Whether assisting households with responsible recycling or supporting businesses in adopting sustainable practices, we believe every effort counts in creating a greener tomorrow.</p>
+
+            <p>Leading the way to a sustainable future, we deliver cutting-edge recycling and waste management solutions designed to transform Africa's waste challenges into opportunities for growth.</p>
         </section>
 
-        <section class="vision-mission">
-            <div class="vision" data-aos="fade-right">
-                <h2>Our Vision</h2>
-                <p>To be a global leader in driving a zero-waste future, fostering eco-friendly practices that protect our planet.</p>
-            </div>
-            <div class="mission" data-aos="fade-left">
-                <h2>Our Mission</h2>
-                <p>We aim to revolutionize waste management by providing efficient, sustainable, and socially responsible solutions that inspire change at every level.</p>
-            </div>
+        <section>
+            <h2>Vision</h2>
+            <p>To be a global leader in driving a zero-waste future, fostering eco-friendly practices that protect our planet while creating a cleaner, sustainable future. We envision a world where waste is transformed into opportunities, driving job creation and environmental stewardship across Africa and beyond.</p>
         </section>
 
-        <section class="about-details" data-aos="fade-up">
-            <h2>Who We Are</h2>
-            <p>At Clean.It, we are innovators and environmentalists dedicated to making a tangible impact on waste management. Since our inception, we have embraced advanced technologies and strategic partnerships to redefine recycling for communities and industries.</p>
-            <p>Whether it's helping households recycle responsibly or supporting businesses in adopting sustainable practices, we believe every effort counts in creating a greener tomorrow.</p>
+        <section>
+            <h2>Mission</h2>
+            <h3>Our mission is to:</h3>
+            <ul>
+                <li>Empower individuals and organizations to contribute to a cleaner planet while fostering economic growth.</li>
+                <li>Reduce waste, promote sustainable energy solutions, and create jobs through strategic community engagement.</li>
+                <li>Revolutionize waste management by providing efficient, sustainable, and socially responsible solutions.</li>
+                <li>Inspire change at every level by leveraging innovation, data-driven strategies, and partnerships to build a thriving, sustainable Africa.</li>
+            </ul>
         </section>
     </main>
 
@@ -113,32 +124,13 @@
     </footer>
 
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="scripts/commonscript.js"></script>
+
     <script>
         // Initialize AOS
         AOS.init({
             duration: 1000,
             once: true
-        });
-
-        // Mobile Navigation
-        const burger = document.querySelector('.burger');
-        const nav = document.querySelector('.nav-links');
-        const navLinks = document.querySelectorAll('.nav-links li');
-
-        burger.addEventListener('click', () => {
-            nav.classList.toggle('active');
-            
-            // Animate links
-            navLinks.forEach((link, index) => {
-                if(link.style.animation){
-                    link.style.animation = '';
-                } else {
-                    link.style.animation = `navLinkFade 0.5s ease forwards ${index / 7 + 0.3}s`;
-                }
-            });
-
-            // Burger animation
-            burger.classList.toggle('toggle');
         });
 
         // Scroll Header
