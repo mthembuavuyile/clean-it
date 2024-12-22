@@ -1,3 +1,5 @@
+/* Custom Properties
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
 :root {
     /* Colors */
     --primary-color: #2ecc71;
@@ -7,11 +9,12 @@
     --white: #ffffff;
     --dark: #1a1a1a;
 
-    /* Effects */
-    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    /* Shadows */
     --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.05);
     --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
     --shadow-lg: 0 10px 20px rgba(0, 0, 0, 0.1);
+
+    /* Transitions */
     --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 
     /* Spacing */
@@ -25,20 +28,33 @@
     /* Layout */
     --border-radius: 8px;
     --container-width: 1400px;
-
-    /* Miscellaneous */
-    --transition-standard: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --header-height: 70px;
 }
 
-/* Global Reset: Normalize default browser styling */
+/* Base Reset
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+/* Base Styles
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    color: var(--text-color);
+    line-height: 1.6;
+    overflow-x: hidden;
+    font-size: 16px;
     font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
 }
 
-/* Typography: Styling for headings and text */
+/* Typography
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
 h1, h2, h3, h4, h5, h6 {
     line-height: 1.2;
     font-weight: 700;
@@ -49,38 +65,31 @@ h1 { font-size: clamp(2.5rem, 5vw, 4rem); }
 h2 { font-size: clamp(2rem, 4vw, 2.5rem); }
 h3 { font-size: 1.5rem; }
 
-/* General Page Styling */
-html {
-    scroll-behavior: smooth;
-}
-
-
-body {
-    color: var(--text-color);
-    line-height: 1.6;
-    overflow-x: hidden;
-    font-size: 16px;
-}
-
-
-/* Navigation Bar: Fixed, responsive navigation design */
-.nav-container {
+/* Header & Navigation
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+header {
     position: fixed;
+    top: 0;
     width: 100%;
-    height: 70px;
-    z-index: 1000;
+    height: var(--header-height);
     background: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(10px);
-    box-shadow: var(--shadow);
+    box-shadow: var(--shadow-md);
+    z-index: 1000;
+}
+
+.nav-container {
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding: 0 var(--spacing-md);
 }
 
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem 5%;
-    max-width: var(--container-width);
-    margin: 0 auto;
+    height: var(--header-height);
+    padding: 0 var(--spacing-md);
 }
 
 .logo {
@@ -89,8 +98,15 @@ body {
     color: var(--primary-color);
     text-decoration: none;
     letter-spacing: -0.5px;
+    transition: var(--transition);
 }
 
+.logo:hover {
+    color: var(--secondary-color);
+}
+
+/* Navigation Links
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
 .nav-links {
     display: flex;
     list-style: none;
@@ -98,11 +114,11 @@ body {
 }
 
 .nav-links a {
-    text-decoration: none;
     color: var(--text-color);
+    text-decoration: none;
     font-weight: 500;
     transition: var(--transition);
-    padding: 0.5rem 0;
+    padding: var(--spacing-xs) 0;
     position: relative;
 }
 
@@ -122,7 +138,8 @@ body {
     width: 100%;
 }
 
-/* Burger Menu: Hidden by default for large screens */
+/* Burger Menu
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
 .burger {
     display: none;
     cursor: pointer;
@@ -136,7 +153,8 @@ body {
     transition: var(--transition);
 }
 
-/* Hero Section: Fullscreen, visually engaging intro section */
+/* Hero Section
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
 .hero {
     min-height: 100vh;
     background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
@@ -147,7 +165,6 @@ body {
     padding: 0 5%;
     position: relative;
 }
-
 
 .hero-content {
     max-width: 800px;
@@ -547,7 +564,6 @@ footer p a{
         width: 98%; /* Adjust width for smaller screens */
     }
 }
-
 /* Mobile Screens (max-width: 480px) */
 @media screen and (max-width: 480px) {
     .btn {
@@ -556,13 +572,25 @@ footer p a{
     }
 
     .footer-content {
-        text-align: center;
+        text-align: left;
     }
 
     .social-icons {
         justify-content: center;
     }
 }
+
+/* Tablet Screens (max-width: 768px) */
+@media screen and (max-width: 768px) {
+    footer {
+        text-align: left;
+    }
+
+    footer .footer-item {
+        text-align: left;
+    }
+}
+
 
 .about-section{
     margin-bottom: 4rem;

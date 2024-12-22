@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Clean.It - Transparent pricing for sustainable waste management and recycling services">
+    <title>Pricing & Solutions | Clean.It</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <style>
+        .pricing-header {
+            text-align: center;
+            padding: 78px 20px;
+            background: linear-gradient(135deg, #2f4230, #2E7D32);
+            color: white;
+        }
+
+        .pricing-container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        .pricing-card {
+            background: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .pricing-card h3 {
+            color: #2E7D32;
+            font-size: 1.5em;
+            margin-bottom: 15px;
+        }
+
+        .price {
+            font-size: 2em;
+            color: #333;
+            margin: 20px 0;
+            font-weight: 600;
+        }
+
+        .price-period {
+            font-size: 0.5em;
+            color: #666;
+        }
+
+        .features {
+            list-style: none;
+            margin: 20px 0;
+        }
+
+        .features li {
+            margin: 10px 0;
+            padding-left: 25px;
+            position: relative;
+        }
+
+        .features li:before {
+            content: "✓";
+            color: #4CAF50;
+            position: absolute;
+            left: 0;
+        }
+
+        .materials-section {
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            margin-bottom: 40px;
+        }
+
+        .materials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .material-card {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .material-card h4 {
+            color: #2E7D32;
+            margin-bottom: 10px;
+        }
+
+        .material-price {
+            font-size: 1.2em;
+            color: #333;
+            font-weight: 500;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 25px;
+            background: #4CAF50;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s ease;
+            margin-top: 20px;
+        }
+
+        .btn:hover {
+            background: #2E7D32;
+        }
+
+        @media (max-width: 768px) {
+            .pricing-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .faq-section {
+            padding: 40px 0;
+            background: #f8f9fa;
+        }
+
+        .faq-section h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #333;
+        }
+
+        .faq-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item summary {
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        .faq-item p {
+            padding: 10px 0;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="nav-container">
+            <div class="navbar">
+                <a href="index.html" class="logo">Clean.It</a>
+                <div class="burger">
+                    <div class="line1"></div>
+                    <div class="line2"></div>
+                    <div class="line3"></div>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="pricing-header">
+            <h1>Our Pricing & Solutions</h1>
+            <p>Transparent pricing for sustainable waste management and recycling services</p>
+        </div>
+
+        <div class="pricing-container">
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <div class="popular-tag">Most Popular</div>
+                    <h3>Business Essential</h3>
+                    <div class="price">R2,499<span class="price-period">/month</span></div>
+                    <ul class="features">
+                        <li>Weekly waste collection</li>
+                        <li>2 recycling bins provided</li>
+                        <li>Monthly waste audit report</li>
+                        <li>Up to 500kg waste processing</li>
+                        <li>Basic sorting service</li>
+                    </ul>
+                    <a href="contact.html" class="btn">Get Started</a>
+                </div>
+
+                <div class="pricing-card">
+                    <h3>Business Premium</h3>
+                    <div class="price">R4,999<span class="price-period">/month</span></div>
+                    <ul class="features">
+                        <li>Twice-weekly collections</li>
+                        <li>4 recycling bins provided</li>
+                        <li>Weekly waste audit reports</li>
+                        <li>Up to 1,200kg waste processing</li>
+                        <li>Advanced sorting service</li>
+                        <li>Compliance certificates</li>
+                    </ul>
+                    <a href="contact.html" class="btn">Get Started</a>
+                </div>
+
+                <div class="pricing-card">
+                    <h3>Enterprise Custom</h3>
+                    <div class="price">Custom<span class="price-period">/month</span></div>
+                    <ul class="features">
+                        <li>Daily collections available</li>
+                        <li>Custom bin configuration</li>
+                        <li>Real-time waste analytics</li>
+                        <li>Unlimited waste processing</li>
+                        <li>Full-service waste management</li>
+                        <li>Dedicated account manager</li>
+                    </ul>
+                    <a href="contact.html" class="btn">Contact Us</a>
+                </div>
+            </div>
+
+            <div class="materials-section">
+                <h2>Recycling Materials Pricing</h2>
+                <p>Current market rates for recycled materials (per ton)</p>
+                
+                <div class="materials-grid">
+                    <div class="material-card">
+                        <h4>Cardboard & Paper</h4>
+                        <div class="material-price">R1,200 - R1,800/ton</div>
+                    </div>
+                    
+                    <div class="material-card">
+                        <h4>PET Plastic</h4>
+                        <div class="material-price">R3,500 - R4,200/ton</div>
+                    </div>
+                    
+                    <div class="material-card">
+                        <h4>Glass</h4>
+                        <div class="material-price">R800 - R1,100/ton</div>
+                    </div>
+                    
+                    <div class="material-card">
+                        <h4>Aluminum</h4>
+                        <div class="material-price">R8,000 - R12,000/ton</div>
+                    </div>
+                    
+                    <div class="material-card">
+                        <h4>Steel & Tin</h4>
+                        <div class="material-price">R2,200 - R3,000/ton</div>
+                    </div>
+                    
+                    <div class="material-card">
+                        <h4>HDPE Plastic</h4>
+                        <div class="material-price">R4,000 - R4,800/ton</div>
+                    </div>
+
+                    <div class="material-card">
+                        <h4>White Paper</h4>
+                        <div class="material-price">R2,750/ton</div>
+                    </div>
+
+                    <div class="material-card">
+                        <h4>K4</h4>
+                        <div class="material-price">R750/ton</div>
+                    </div>
+
+                    <div class="material-card">
+                        <h4>LD Clear</h4>
+                        <div class="material-price">R2,250/ton</div>
+                    </div>
+
+                    <div class="material-card">
+                        <h4>LD Mix</h4>
+                        <div class="material-price">R2,250/ton</div>
+                    </div>
+
+                    <div class="material-card">
+                        <h4>Chappies</h4>
+                        <div class="material-price">R3,350/ton</div>
+                    </div>
+
+                    <div class="material-card">
+                        <h4>PET Clear</h4>
+                        <div class="material-price">R3,350/ton</div>
+                    </div>
+
+                    <div class="material-card">
+                        <h4>PET Green</h4>
+                        <div class="material-price">R1,750/ton</div>
+                    </div>
+
+                    <div class="material-card">
+                        <h4>PET Brown</h4>
+                        <div class="material-price">R1,750/ton</div>
+                    </div>
+
+                    <div class="material-card">
+                        <h4>HD</h4>
+                        <div class="material-price">R5,850/ton</div>
+                    </div>
+
+                    <div class="material-card">
+                        <h4>HD Drum</h4>
+                        <div class="material-price">R3,750/ton</div>
+                    </div>
+                </div>
+            </div>
+
+            <section class="faq-section">
+                <h2>Frequently Asked Questions</h2>
+                <div class="faq-grid">
+                    <details class="faq-item">
+                        <summary>What payment methods do you accept?</summary>
+                        <p>We accept all major credit cards, EFT, and direct debit payments. For enterprise solutions, we also offer invoice-based payment terms.</p>
+                    </details>
+                    <details class="faq-item">
+                        <summary>Can I upgrade my plan anytime?</summary>
+                        <p>Yes, you can upgrade your plan at any time. The new pricing will be prorated for the remainder of your billing cycle.</p>
+                    </details>
+                    <details class="faq-item">
+                        <summary>Do you offer long-term contracts?</summary>
+                        <p>Yes, we offer flexible contract terms including month-to-month, annual, and custom long-term agreements with special pricing.</p>
+                    </details>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <script src="scripts/commonscript.js"></script>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-info">
+                <h3>Clean.It</h3>
+                <p>Sustainable Recycling and Waste Management Solutions for a Better Future.</p>
+                <div class="social-icons">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="/about">About Us</a></li>
+                    <li><a href="/services">Services</a></li>
+                    <li><a href="/contact">Contact</a></li>
+                    <li><a href="/blog">Blog</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-links">
+                <h4>Our Services</h4>
+                <ul>
+                    <li><a href="#">Business Solutions</a></li>
+                    <li><a href="#">School Programs</a></li>
+                    <li><a href="#">Community Services</a></li>
+                    <li><a href="#">Data Analytics</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2024 Clean.It. All Rights Reserved.</p>
+            <p>Designed and developed by <a href="https://avuyilemthembu.co.za" target="_blank">Avuyile Mthembu</a></p>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,9 +1,37 @@
 .hero {
+    background-image: url(https://media.istockphoto.com/id/1671131571/photo/hand-of-human-is-holding-painted-green-leaf-with-handshake-icon-environment-social-and.jpg?s=612x612&w=0&k=20&c=N11xXZwMCCyXBB4lpHSKR1ExaLK42FiFG4II3cRZEtM=);
+    background-size: cover; /* Ensure the image covers the entire area */
+    background-position: center; /* Center the image */
     min-height: 100vh;
-    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
-                url(https://media.istockphoto.com/id/1210037479/video/colorful-plastic-trash-cans-with-a-logo-recycling-looped-animation-on-a-blue-sky-background.jpg?s=640x640&k=20&c=3-reQejegbFSF3MCAP33X27d-o2KsA4jWTQ_AKDo4dE=) center/cover;
     display: flex;
     align-items: center;
+    justify-content: center; /* Center content horizontally */
     padding: 0 5%;
     position: relative;
+    color: white; /* Make sure text is readable on the background */
+    text-align: center; /* Center text */
+}
+
+/* Mobile-first approach */
+@media (max-width: 767px) {
+    .hero {
+        background-position: top; /* Adjust position for mobile */
+        padding: 0 10%; /* Increase padding for mobile for better spacing */
+    }
+}
+
+/* Tablet and small laptops */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .hero {
+        background-position: center center; /* Keep the image centered */
+        padding: 0 7%; /* Adjust padding for medium screens */
+    }
+}
+
+/* Large screens (laptops and desktops) */
+@media (min-width: 1025px) {
+    .hero {
+        background-position: center center; /* Keep the image centered */
+        padding: 0 5%; /* Default padding for larger screens */
+    }
 }
